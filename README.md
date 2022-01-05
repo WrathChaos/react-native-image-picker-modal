@@ -2,7 +2,7 @@
 
 [![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-image-picker-modal)
 
-[![https://img.shields.io/badge/-Easy%20to%20use%20image%20picker%20modal%20with%20awesome%20iOS%20Picker%20design%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-image-picker-modal)
+[![React Native Image Picker Modal](https://img.shields.io/badge/-Easy%20to%20use%20image%20picker%20modal%20with%20awesome%20iOS%20Picker%20design%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-image-picker-modal)
 
 [![npm version](https://img.shields.io/npm/v/react-native-image-picker-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-image-picker-modal)
 [![npm](https://img.shields.io/npm/dt/react-native-image-picker-modal.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-image-picker-modal)
