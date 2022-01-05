@@ -1,9 +1,9 @@
 import React from "react";
 import { Image, Text, View, FlatList, SafeAreaView } from "react-native";
-import RNBounceable from "@freakycoder/react-native-bounceable";
 import LottieView from "lottie-react-native";
+import ImagePickerModal from "react-native-image-picker-modal";
+import RNBounceable from "@freakycoder/react-native-bounceable";
 import useStateWithCallback from "@freakycoder/react-use-state-with-callback";
-import ImagePickerModal from "./lib/ImagePickerModal";
 
 const App = () => {
   const [isVisible, setVisible] = useStateWithCallback<boolean>(false);
