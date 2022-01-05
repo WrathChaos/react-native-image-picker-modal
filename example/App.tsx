@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
+  Image,
   Text,
-  useColorScheme,
   View,
+  StatusBar,
+  SafeAreaView,
+  useColorScheme,
 } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 import ImagePickerModal from "./lib/ImagePickerModal";
@@ -15,6 +14,7 @@ const App = () => {
   const isDarkMode = useColorScheme() === "dark";
 
   const [isVisible, setVisible] = React.useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = React.useState<any>(null);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -39,9 +39,27 @@ const App = () => {
           </Text>
         </RNBounceable>
       </View>
+      {selectedItem && (
+        <Image
+          resizeMode="contain"
+          style={{ height: 550, width: 350, alignSelf: "center" }}
+          source={{ uri: selectedItem.assets[0].uri }}
+        />
+      )}
       <ImagePickerModal
         data={["Take a photo", "Select from the library"]}
         isVisible={isVisible}
+        onCancelPress={() => {
+          setVisible(false);
+        }}
+        onBackdropPress={() => {
+          setVisible(false);
+        }}
+        onPress={(item: any) => {
+          console.log(item);
+
+          setSelectedItem(item);
+        }}
       />
     </SafeAreaView>
   );

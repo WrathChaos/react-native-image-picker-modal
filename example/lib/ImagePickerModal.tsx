@@ -19,12 +19,14 @@ interface IImagePickerModalProps extends IPickerModalProps {
   style?: CustomStyleProp;
   isVisible: boolean;
   data: string[];
+  onPress: (item: any) => void;
 }
 
 const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
   style,
   isVisible,
   data,
+  onPress,
   ...rest
 }) => {
   const handleSelection = async (selectedItem: string) => {
@@ -37,6 +39,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
       };
       const result = await launchCamera(options);
       console.log(result);
+      onPress && onPress(result);
     } else if (selectedItem === data[1]) {
       const options = {
         maxHeight: 200,
@@ -48,6 +51,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
       };
       const result = await launchImageLibrary(options);
       console.log(result);
+      onPress && onPress(result);
     }
   };
 
