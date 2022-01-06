@@ -14,6 +14,8 @@ type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 const PHOTO = "photo";
 const LIBRARY = "library";
 
+const Hello = "hello";
+
 interface IImagePickerModalProps extends IPickerModalProps {
   style?: CustomStyleProp;
   isVisible: boolean;
