@@ -14,12 +14,11 @@ type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 const PHOTO = "photo";
 const LIBRARY = "library";
 
-const Hello = "hello";
-
 interface IImagePickerModalProps extends IPickerModalProps {
   style?: CustomStyleProp;
   isVisible: boolean;
   data: string[];
+  includeBase64?: boolean;
   onPress: (item: any) => void;
 }
 
@@ -27,6 +26,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
   isVisible,
   data,
   onPress,
+  includeBase64 = false,
   ...rest
 }) => {
   const handleSelection = async (selectedItem: string) => {
@@ -34,7 +34,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
       const options = {
         saveToPhotos: true,
         mediaType: PHOTO as MediaType,
-        includeBase64: false,
+        includeBase64: includeBase64,
         includeExtra: true,
       };
       const result = await launchCamera(options);
@@ -43,7 +43,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
       const options = {
         selectionLimit: 0,
         mediaType: LIBRARY as MediaType,
-        includeBase64: false,
+        includeBase64: includeBase64,
         includeExtra: true,
       };
       const result = await launchImageLibrary(options);
