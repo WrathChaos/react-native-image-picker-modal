@@ -119,6 +119,7 @@ should work of the example project.
 | actionButtonTextStyle     |       ViewStyle       |        default        | set or override the style object for the action button text                              |
 | actionButtonUnderlayColor |        string         |    rgba(0,0,0,0.3)    | change the action button's underlay color                                                |
 | cancelButtonUnderlayColor |        string         | rgba(200,200,200,0.1) | change the cancel button's underlay color                                                |
+| includeBase64             |        boolean        |         false         | when you need `base64`                                                                   |
 
 ## Future Plans
 
