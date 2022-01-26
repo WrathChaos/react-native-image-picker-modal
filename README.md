@@ -120,6 +120,8 @@ should work of the example project.
 | actionButtonUnderlayColor |        string         |    rgba(0,0,0,0.3)    | change the action button's underlay color                                                |
 | cancelButtonUnderlayColor |        string         | rgba(200,200,200,0.1) | change the cancel button's underlay color                                                |
 | includeBase64             |        boolean        |         false         | when you need `base64`                                                                   |
+| capturePhotoOptions       |     CameraOptions     |        default        | override the options for capturing the photo                                             |
+| libraryPhotoOptions       |  ImageLibraryOptions  |        default        | override the options for picking images from library                                     |
 
 ## Future Plans
 

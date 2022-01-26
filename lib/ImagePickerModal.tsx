@@ -4,6 +4,8 @@ import PickerModal, {
   IPickerModalProps,
 } from "@freakycoder/react-native-picker-modal";
 import {
+  CameraOptions,
+  ImageLibraryOptions,
   launchCamera,
   launchImageLibrary,
   MediaType,
@@ -19,6 +21,8 @@ interface IImagePickerModalProps extends IPickerModalProps {
   isVisible: boolean;
   data: string[];
   includeBase64?: boolean;
+  capturePhotoOptions?: CameraOptions;
+  libraryPhotoOptions?: ImageLibraryOptions;
   onPress: (item: any) => void;
 }
 
@@ -26,6 +30,8 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
   isVisible,
   data,
   onPress,
+  capturePhotoOptions,
+  libraryPhotoOptions,
   includeBase64 = false,
   ...rest
 }) => {
@@ -37,7 +43,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
         includeBase64: includeBase64,
         includeExtra: true,
       };
-      const result = await launchCamera(options);
+      const result = await launchCamera(capturePhotoOptions || options);
       onPress && onPress(result);
     } else if (selectedItem === data[1]) {
       const options = {
@@ -46,7 +52,7 @@ const ImagePickerModal: React.FC<IImagePickerModalProps> = ({
         includeBase64: includeBase64,
         includeExtra: true,
       };
-      const result = await launchImageLibrary(options);
+      const result = await launchImageLibrary(libraryPhotoOptions || options);
       onPress && onPress(result);
     }
   };

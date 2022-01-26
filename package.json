@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-picker-modal",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Easy to use image picker modal with awesome iOS Picker design for React Native",
   "main": "./build/dist/ImagePickerModal.js",
   "repository": "git@github.com:WrathChaos/react-native-image-picker-modal.git",
